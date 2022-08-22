@@ -1,0 +1,8 @@
+C:\Users\Rokan\OneDrive\Desktop\GPG230\multithreading\multithreading\bin\Debug\multithreading.exe.config
+C:\Users\Rokan\OneDrive\Desktop\GPG230\multithreading\multithreading\bin\Debug\multithreading.exe
+C:\Users\Rokan\OneDrive\Desktop\GPG230\multithreading\multithreading\bin\Debug\multithreading.pdb
+C:\Users\Rokan\OneDrive\Desktop\GPG230\multithreading\multithreading\obj\Debug\multithreading.csproj.AssemblyReference.cache
+C:\Users\Rokan\OneDrive\Desktop\GPG230\multithreading\multithreading\obj\Debug\multithreading.csproj.SuggestedBindingRedirects.cache
+C:\Users\Rokan\OneDrive\Desktop\GPG230\multithreading\multithreading\obj\Debug\multithreading.csproj.CoreCompileInputs.cache
+C:\Users\Rokan\OneDrive\Desktop\GPG230\multithreading\multithreading\obj\Debug\multithreading.exe
+C:\Users\Rokan\OneDrive\Desktop\GPG230\multithreading\multithreading\obj\Debug\multithreading.pdb
