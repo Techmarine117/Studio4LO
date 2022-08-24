@@ -1,23 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
-[System.Serializable]
 
-public class basicUser
+
+[System.Serializable]
+public class BasicUser
 {
-    public string username;
+    public User user;
+    
+}
+
+[System.Serializable]
+public class User
+{
     public string id;
+    public string username;
     public string password;
     public int score;
+    
+   
 
+    public User()
+    {
 
-
-    public string Username { get { return username; } }
-    public string Id { get { return id; } }
-    public string Password { get { return password; } }
-    public int Score { get { return score; } }
-
-    public basicUser(string name, string playerId, string password, int playerScore)
+    }
+    public User(string name, string playerId, string password, int playerScore)
     {
         this.username = name;
         this.id = playerId;

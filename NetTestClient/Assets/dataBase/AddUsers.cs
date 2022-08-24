@@ -5,10 +5,10 @@ using UnityEngine.Networking;
 
 public class AddUsers : MonoBehaviour
 {
-    public string userName = "Techland145";
-    public int score = 1200;
-    public string password = "45rg";
-    public string id = "131";
+    public string userName;
+    public string score;
+    public string password;
+    public string id;
 
     private void Awake()
     {
@@ -25,7 +25,7 @@ public class AddUsers : MonoBehaviour
     [ContextMenu("AddUsers")]
     public void AddUser()
     {
-        basicUser basicUser = new basicUser("User01", "79", "bfg64", 1800);
+        User basicUser = new User("User04", "72", "gsdg", 1600);
 
        string json = JsonUtility.ToJson(basicUser);
         Http.hTTPResponseEvent += AddUserResponse;

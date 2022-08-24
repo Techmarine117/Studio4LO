@@ -7,7 +7,9 @@ using System.Text.RegularExpressions;
 using System.Linq;
 using static UnityEngine.UIElements.UxmlAttributeDescription;
 using TMPro;
+using System;
 
+[System.Serializable]
 public class GetAllUsers : MonoBehaviour
 {
     EndPoints endPoints = new EndPoints();
@@ -30,46 +32,53 @@ public class GetAllUsers : MonoBehaviour
     private void GetAllUsersResponse(string jsonResponse, bool successful)
     {
         Debug.Log(jsonResponse);
-        successful = true;
-         basicUser[] user = JsonUtility.FromJson<basicUser[]>(jsonResponse);
+        DataBaseUsers users = JsonUtility.FromJson<DataBaseUsers>(jsonResponse);
+
+
+        Debug.Log(users.users[0].username);
+        Debug.Log(users.users[0].score);
         
+        //scoreBoardText.text = users.user.username;
+
+        // Debug.Log(user.Length);                                  
 
 
-        for (int i = 0; i < user.Length; i++)
+        print(users);
+        for(int i = 0; i < users.users.Length; i++)
         {
-            Debug.Log(user[0].Username);
-            Debug.Log(user[i].score);
-            Debug.Log(user[i]);
-            scoreBoardText.text = user[i].username;
+            for (int j = 0; j < users.users.Length; j++)
+            {
+                if (users.users[i].score > users.users[j].score)
+                {
+                    DataBaseUser copy = users.users[i];
+                    users.users[i] = users.users[j];
+                    users.users[j] = copy;
+                    
+                }
+            }
         }
+        string scoreText = "";
 
-        //jsonResponse.Split(':'); //this creates a string variable for every bunching of         //letters that are separated by a space
-
-        /*foreach (var word in words)
-       {
-         System.Console.WriteLine($"<{word}>");
-       }*/
-
-
-
-        //print(users);
-        /*for(int i = 0; i < users.users.Length; i++)
+        for (int i = 0; i < users.users.Length; i++)
         {
-            print(users.users[i].name);
-        }*/
+            scoreText += $"{i + 1}. {users.users[i].username} - {users.users[i].score}\n";
+        }
+            scoreBoardText.text = scoreText;
     }
 }
 
+[Serializable]
 public class DataBaseUsers
 {
     public DataBaseUser[] users;
 }
 
+[Serializable]
 public class DataBaseUser
 {
-    public string id;
-    public string name;
-    public string score;
+   
+    public string username;
+    public int score;
 }
 
 

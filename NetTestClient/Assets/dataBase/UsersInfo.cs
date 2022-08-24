@@ -5,11 +5,11 @@ using UnityEngine;
 [System.Serializable]
 public class UsersInfo : MonoBehaviour
 {
-   public basicUser[] users;
+   public BasicUser[] users;
 
-    public basicUser[] Users{ get { return users; } }
+    public BasicUser[] Users{ get { return users; } }
 
-    public UsersInfo(basicUser[] clients)
+    public UsersInfo(BasicUser[] clients)
     {
         this.users = clients;
     }
